@@ -38,9 +38,9 @@ db.serialize(() => {
             break;
 
         case '4':
-            let input = `${process.argv[3]} ${process.argv[4]}`
-
-            db.all(`SELECT DISTINCT l.year_award, l.win, l.nominee FROM awards l 
+            let input = [process.argv[3],process.argv[4]].join(' ')
+            console.log(input)
+            db.all(`SELECT DISTINCT l.year_award FROM awards l 
                      INNER JOIN awards r ON r.year_award = l.year_award-1 
                      WHERE l.nominee = '${input}'
                      AND r.nominee = '${input}'
