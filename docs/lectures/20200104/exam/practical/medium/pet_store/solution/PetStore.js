@@ -6,7 +6,6 @@ class PetStore {
     listPets(species) {
         if (!species) return this.pets
         
-        // return this.pets.filter(p => p.species === species)
         let result = []
         for (let i = 0; i < this.pets.length; i++) {
             let p = this.pets[i]
@@ -15,13 +14,14 @@ class PetStore {
             }
         }
         return result
-
+        
+        // funkcionalisan: return this.pets.filter(p => p.species === species)
     }
 
     buy(name) {
         if (!name) throw new Error('name parameter missing')
 
-        // const idx = this.pets.findIndex(p => p.name === name)
+        // funkcionalisan: const idx = this.pets.findIndex(p => p.name === name)
         let idx = -1
         for (let i = 0; i < this.pets.length; i++) {
             if(this.pets[i].name === name) {
