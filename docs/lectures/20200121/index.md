@@ -3,6 +3,15 @@
 
 [előző alkalom](../20200118) [következő alkalom](../20200124)
 
+# Summary
+
+ - Megneztuk hogyan irjunk nodejs valtozot html templatebe
+ - megneztuk h mukodik egy mar az npmben levo ilyen templating system
+   - handlebars, npm package neve: express-handlebars
+ - ismerkedes fetch-el, aszinkron hivas
+ - ismerkedes a promise-sal
+   - fontos: harom allapot, pending, resolved (ha success), rejected (ha failed)
+
 # Ismétlés
 
 ...

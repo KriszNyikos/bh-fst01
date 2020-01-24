@@ -7,6 +7,8 @@ const person = { first: 'John', last: 'Doe' }
 
 const first = obj.first
 const last = obj.last
+//Megoldás:
+    const {first, last} = person
 
 console.log(first, last)
 
@@ -18,5 +20,7 @@ person.address = {
     street: '6th street'
 }
 const state = person.address.state
+//Megoldás:
+    const {address: {state}} = person
 
 console.log(state)

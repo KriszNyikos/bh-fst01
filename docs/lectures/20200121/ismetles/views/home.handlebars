@@ -1,0 +1,55 @@
+<h1>Hello {{name}}</h1>
+
+<script>
+
+    const url = 'http://localhost:5000/firstFetchStuff';
+    const p = fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+
+    console.log('async elott vagyok fizikalisan is');
+
+    console.log(p);
+
+    p.then( (resp) => {
+        console.log('asyncban vagyok, then');
+        return resp.json();
+    }).then( (data) => {
+        console.log('vegre itt a data');
+        console.log(data);
+    });
+
+    console.log('async miatt hamarabb futok haza');
+
+
+    const url2 = 'http://localhost:5000/getdata';
+    const users = fetch(url2)
+        .then( resp => resp.json())
+        .then( data => {
+            console.log('userek a dbben:');
+            console.log(data);
+
+            const url3 = 'http://localhost:5000/add';
+
+            // de ha igy csinalom, akkor mar abban a sorrendben fut ahogy kell.
+            return fetch(`${url3}/csaba`, { method: 'POST'});
+        }).then( (resp) => { 
+            // pontosan a get utan fog lefutni.
+            console.log('insert after get')
+        }); // thennel lehet chainelni a promisokat
+    
+    const url3 = 'http://localhost:5000/add';
+    // ez hamarabb lefuthat mint a get fentebb mert async
+    const resp = fetch(`${url3}/csaba`, {
+            method: 'POST'
+        })
+        .then( resp => {
+            console.log('after insert');
+            console.log(resp);
+        });
+
+
+</script>

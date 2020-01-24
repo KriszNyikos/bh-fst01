@@ -24,12 +24,29 @@ let steve = {
     default: function() {
 
     }
-
 }
-console.log(steve.intro())
-console.log(steve.mood('rainy')) // == 'coding'
 
-// (2)
+//Megoldás:
+    let steve = {
+        name: 'Steve',
+        intro: function () { return `My name is ${this.name}` }, //Objektum kulcsszavakra nem működik az arrow function
+        mood: function (weather) {
+            let cases = {
+                'rainy': this.rainy(),
+                'sunny': this.sunny(),
+                default: this.default()
+            };
+            return cases[weather];
+        },
+        rainy: () => 'coding',
+        sunny: () => 'swimmimg',
+        default: () => { }
+    }
+
+console.log(steve.intro())
+console.log(steve.mood('sunny')) // == 'coding'
+
+(2)
 
 const factory = {
     manufacturer: 'Fjord',
@@ -42,6 +59,17 @@ const factory = {
         }
     }
 }
+
+//Megoldás:
+    const factory = {
+        manufacturer: 'Fjord',
+        mechanic: function() {
+            let that = this
+            return {
+                canFix: (car) => car.manufacturer === that.manufacturer
+            }
+        }
+    }
 
 const car = {manufacturer: 'Fjord'}
 console.log(factory.mechanic().canFix(car)) // == true

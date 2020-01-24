@@ -1,7 +1,7 @@
 class Rectangle {
     constructor(a, b) {
-        if (a <= 0 || b <= 0) throw new RangeError('a and b must be positive numbers');
-        
+        if (a <= 0 || b <= 0) { throw new RangeError("The numbers must be positive!"); }
+
         this.a = a;
         this.b = b;
     }

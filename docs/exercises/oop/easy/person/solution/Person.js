@@ -1,20 +1,17 @@
 class Person {
     constructor(name, age) {
-        if (!name) throw new Error();
-        if (age === undefined || age < 0) throw new Error();
+        if (!name || !age) { throw new Error("Enter your data!"); }
+        if (age < 0) { throw new Error("Name or age is uncorrect!"); }
 
-        this._name = name;
+        this.name = name;
         this._age = age;
     }
-
     age() {
         return this._age;
     }
-
     sayHi() {
-        return `Hi, my name is ${this._name} and I'm ${this._age} years old.`
+        return `Hi, my name is ${this.name} and I'm ${this._age} years old.`;
     }
-
     growOlder() {
         this._age++;
     }
