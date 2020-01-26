@@ -1,1 +1,0 @@
-Ide írtam a sok habiszit, olvasd csak el, biztos hasznos lesz

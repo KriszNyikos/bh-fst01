@@ -142,6 +142,8 @@ A `ping.js` a hívás eredményét dolgozza fel: állítsa össze a `'ping-pong'
 Egy endpointja `GET /whoami`, amely a nevünket adja vissza,
 pl. Szűcs László.
 
+Konzolra írjuk ki a beérkező kérés összes fejléc sort!
+
 Egy másik endpointja a `GET /whois`, amely query string paraméterként vár egy ngrok ID-t
 
 A `GET /whois` endpoint továbbhív az ngrok ID-val bíró hoszt

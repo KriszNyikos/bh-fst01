@@ -13,6 +13,12 @@
 - 2019. december 19., csütörtök: próbainterjúk
 - [2019. december 21., szombat](lectures/20191221)
 - [2020. január 04., szombat](lectures/20200104)
+- [2020. január 07., kedd](lectures/20200107)
+- [2020. január 09., csütörtök](lectures/20200109)
+- [2020. január 11., szombat](lectures/20200111)
+- [2020. január 14., kedd](lectures/20200114)
+- [2020. január 18., kedd](lectures/20200118)
+
 
 # gyakorló feladatsorok
 
@@ -37,5 +43,16 @@ A könyvek feldolgozását segítő sorvezető kérdések: [itt](theory/)
 📹videó
 ❕kötelező anyag
 🧠elméleti háttér (szabadon választható)
+
+<!--
+
+egy-egy előadás ötlet:
+
+- oauth
+- sso
+- captcha
+- ssh
+
+>
 
 

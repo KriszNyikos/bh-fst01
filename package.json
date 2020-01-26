@@ -1,7 +1,7 @@
 {
   "name": "vcs",
   "version": "0.1.0",
-  "description": "",
+  "description": "This is the repository for a junior web developer training I give. The training is cool.",
   "main": "index.js",
   "scripts": {
     "test": "node mocha.js"
@@ -14,5 +14,21 @@
     "chai": "^4.2.0",
     "eslint": "^6.8.0",
     "mocha": "^6.2.2"
-  }
+  },
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/szcsl/bh-fst01.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/szcsl/bh-fst01/issues"
+  },
+  "homepage": "https://github.com/szcsl/bh-fst01#readme"
 }

@@ -6,12 +6,10 @@ class Dining {
 
     options() {
         return this._restaurants.filter(
-            r => 
-                this._guests.reduce(
-                    (ok, g) => r.recommendations(g.dispreferences()).length && ok
-                    ,true
-                )
-            );
+            restaurant => this._guests.every(
+                guest => restaurant.recommendations(guest.dispreferences()).length > 0
+            )
+        );
     }
 }
 

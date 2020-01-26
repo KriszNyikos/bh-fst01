@@ -224,7 +224,7 @@ describe('Person', () => {
 
             assert.strictEqual(p._cash, 0);
         });
-        it("should do nothing if there isn't enough cash to use", () => {
+        it("should not decrease _cash if there isn't enough cash to use", () => {
             const p = new Person(5000);
 
             p.useCash(7500)

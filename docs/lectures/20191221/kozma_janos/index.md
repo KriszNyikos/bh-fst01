@@ -1,1 +1,0 @@
-Kozma Jani
