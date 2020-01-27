@@ -1,0 +1,27 @@
+
+<script>
+    function editor(){
+        let url = '/book/'+{{ id }}+'/edit';
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify({title: document.getElementById('title').value, author: document.getElementById('author').value}),
+            headers: {'Content-Type': 'application/json'}
+        })
+        .then(resp => {
+            if(resp.status == 301){
+                window.location.replace('http://localhost:3000/books.html')
+            } else { window.alert('Sikertelen művelet') }
+            
+        })
+           
+    }
+</script>
+{{{ table }}}
+    <input type="text" id='title' placeholder='{{ title }}'>
+    <input type="text" id='author' placeholder='{{ author }}'>
+    <button onclick="editor()">Változtatás</button>
+
+
+
+
+

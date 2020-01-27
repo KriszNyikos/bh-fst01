@@ -1,0 +1,17 @@
+<script>
+    function deleter() {
+        let url = '/book/' + {{ id }} +'/delete';
+    let confirm = window.confirm('Biztos hogy törölni akarod?')
+    if (confirm) {
+        fetch(url, {method: 'POST'})
+            .then(resp => {
+                if(resp.status == 301){
+                window.location.replace('http://localhost:3000/books.html')
+            } else { window.alert('Sikertelen művelet') }
+            })
+    }      
+    }
+</script>
+<h3>Biztos hogy törölni akarod az alábbi könyvet?</h3>
+{{{ table }}}
+<button onclick="deleter()">Törlés</button>

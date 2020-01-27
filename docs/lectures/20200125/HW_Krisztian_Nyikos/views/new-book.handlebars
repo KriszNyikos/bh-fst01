@@ -1,0 +1,23 @@
+<h2>New book</h2>
+<script>
+    function newBook(){
+        fetch('/books', {
+            method: 'POST',
+            body: JSON.stringify({title: document.getElementById('title').value, author: document.getElementById('author').value}),
+            headers: {'Content-Type': 'application/json'}
+        })
+        .then(resp => {
+            if(resp.status == 301){
+                window.location.replace('http://localhost:3000/books.html')
+            } else { window.alert('Sikertelen művelet') }})
+           
+    }
+</script>
+    <input type="text" id='title' placeholder='Ide írd az új könyv nevét'>
+    <input type="text" id='author' placeholder='Ide írd az új könyv íróját'>
+    <button onclick="newBook()">Új könyv felvitele</button>
+
+
+
+
+
