@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .student {
+            background-color: #192a56;
+            color: #f5f6fa;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .red {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>    
+    <input class="click-btn" type="button" value="click me">
+
+    <div id='container'>
+
+    </div>
+
+    <input id="hello_btn" type="button" value='hello world'>
+
+    <input type="text" id='typer'>
+
+    <input id="counter" type="button" value='0'>
+
+
+    <div id='container2'>
+        <div class='student'>Csaba</div>
+        <div class='student'>Valaki1</div>
+        <div class='student'>Valaki2</div>
+        <div class='student'>Valaki3</div>
+        <div class='student'>Valaki4</div>
+    </div>
+
+
+    <script>
+
+        const students = document.getElementById('container2');
+
+        students.addEventListener('click', (event) => {
+
+            event.target.classList.add('red');
+
+            event.target.getAttribut()
+
+        });
+
+        // =========== counter start ===========
+
+        const counter = document.getElementById('counter');
+
+        counter.addEventListener('click', () => {
+            console.log('egyszer')
+        });
+
+        counter.addEventListener('click', () => {
+            console.log('ketszer')
+        });
+
+
+        // =========== elso start ===========
+
+        /**
+         * @type {HTMLElement}
+         * */
+        const divCont = document.getElementById('container');
+        const helloBtn = document.querySelector('#hello_btn');  // igyis lekerhetunk id alapjan elemet
+
+        helloBtn.addEventListener('click', () => {
+            divCont.innerText = 'Hello World!';
+        });
+
+        const typer = document.getElementById('typer');
+        typer.addEventListener('keyup', (event) => {
+            const {key} = event;
+
+            divCont.innerText += key;
+        });
+
+
+        window.addEventListener('keydown', () => console.log('down'));
+        window.addEventListener('keyup', () => console.log('keyup'));
+        window.addEventListener('keypress', () => console.log('keypress'));
+
+
+        
+        // =========== else start ===========
+
+
+        // =========== bemelegites start ===========
+        const btn = document.querySelector('.click-btn');  // biztosan egy elemet add vissza, ha talal
+
+        function handler(event) {
+            event.stopPropagation();  // nem fog fel menni a window objectig a click.
+            // event.preventDefault();
+            alert('Hola');
+        }
+ 
+        // click tipus esemenyre, es megadunk egy callback-et;
+        btn.addEventListener('click', handler);
+
+        // window.addEventListener('click', () => {
+        //     alert('Window is clicked!');
+        // })
+
+
+        // =========== bemelegites end ===========
+
+    </script>
+</body>
+</html>

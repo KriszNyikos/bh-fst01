@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #result{
+            border: solid 1px black;
+            height: 20px;
+            padding: 2px;
+        }
+
+        .modal {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            text-align: center;
+            margin: 0;
+            opacity: 0;
+            display: none;
+            transition: ease-in 1s;
+        }
+
+        .show {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="modal">
+        <h1>Are u sure?</h1>
+        <button>No</button>
+        <button>Absolutely No</button>
+    </div>
+    
+   <table>
+       <tr>
+           <td colspan="4">
+              <div id="result">0</div> 
+           </td>
+       </tr>
+        <tr>
+            <td> <button>1</button> </td>
+            <td> <button>2</button> </td>
+            <td> <button>3</button> </td>
+            <td> <button>+</button> </td>
+        </tr>
+        <tr>
+            <td> <button>4</button> </td>
+            <td> <button>5</button> </td>
+            <td> <button>6</button> </td>
+            <td> <button>-</button> </td>
+        </tr>
+        <tr>
+            <td> <button>7</button> </td>
+            <td> <button>8</button> </td>
+            <td> <button>9</button> </td>
+            <td> <button>/</button> </td>
+        </tr>
+        <tr>
+            <td> <button>0</button> </td>
+            <td> <button>*</button> </td>
+            <td > <button>=</button> </td>
+            <td > <button id='c'>C</button> </td>
+        </tr>
+    </table>
+
+    <script src='./calculator.js'></script>
+</body>
+</html>
