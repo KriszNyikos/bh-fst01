@@ -9,6 +9,8 @@ Implementaljuk a konyveket szimbolizalo osztalyt
 
 ### constructor(author: string, title: string, pageNumber: number)
 
+bejovo parameterek nevei legyenek a propertyk nevei is.
+
 ## library
 
 Hozzunk letre egy konyvtarat.
@@ -40,4 +42,8 @@ tavolitsunk el elemet referencia szerint a listankbol
 ### removeBookByTitle(name: String)
 
 tavolitsunk el konyvet a konyv cime szerint
+
+### sortBooks()
+
+rendezzuk ABC szerint novekvo sorrendbe a konyveket a listaban. `books` propertynk legyen ez az uj rendezett lista.
 
