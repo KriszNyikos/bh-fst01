@@ -1,0 +1,31 @@
+<table border="1">
+    <tr>
+        <td>itenName</td>
+        <td>itenDone</td>
+        <td>Actions</td>
+        <td>Actions2</td>
+    </tr>
+    {{#each todolist}}
+        <tr>
+            <td>{{title}}</td>
+            <td>{{done}}</td>
+            <td><a href="/mark_as_done/{{id}}">mark as done</a></td>
+            <td><a onclick="markAsDone({{id}})">mark as done</a></td>
+        </tr>
+    {{/each}}
+</table>
+
+<script>
+    function markAsDone(id) {
+        const data = {"id":id}
+        fetch(
+            'http://localhost:5000/mark_as_done', {
+                method: 'POST', 
+                headers: {
+                    'Content-Type': 'application/json'
+                },                
+                body: JSON.stringify(data)
+            }
+        );
+    }
+</script>

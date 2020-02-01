@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="example.css">
+</head>
+
+<body>
+    <p>ref<a href="https://javascript.info/bubbling-and-capturing">https://javascript.info/bubbling-and-capturing</a></p>
+  A click shows both <code>event.target</code> and <code>this</code> to compare:
+
+  <form id="form">FORM
+    <div>DIV
+      <p>P</p>
+      <button onclick="alert('only the button');event.stopPropagation()">Click me</button>
+    </div>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>

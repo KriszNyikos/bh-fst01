@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script>
+            function ping() {
+                let url = document.getElementById("url").value;
+
+                fetch(url)
+                    .then(res => res.text())
+                    .then(body => {
+                        document.getElementById("result").innerHTML=body;
+                        console.log(body);
+                    })
+                }
+        </script>
+
+    </head>
+    <body>
+        <!-- phase 1
+        <form method="GET" action="http://localhost:3000">
+            <input type="submit" value="mehet" />
+        </form>
+        -->
+
+        <div>
+            <p>
+                <label for="url">Kérem addja meg a pingelni kívánt urlt: </label>
+                <input type="text" name="url" id="url" value="http://localhost:3000/" />
+            </p>    
+            <p>
+                <input type="button" value="pingeljél" onclick="javascript: ping();" />
+            </p>
+            <p id="result"></p>
+        </div>
+
+    </body>
+</html>

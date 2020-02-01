@@ -1,0 +1,19 @@
+<style>
+    body * {
+      margin: 10px;
+      border: 1px solid blue;
+    }
+  </style>
+  <p>ref<a href="https://javascript.info/bubbling-and-capturing">https://javascript.info/bubbling-and-capturing</a></p>
+  <form>FORM
+    <div>DIV
+      <p>P</p>
+    </div>
+  </form>
+  
+  <script>
+    for(let elem of document.querySelectorAll('*')) {
+      elem.addEventListener("click", e => alert(`Capturing: ${elem.tagName}`), true);
+      elem.addEventListener("click", e => alert(`Bubbling: ${elem.tagName}`));
+    }
+  </script>
